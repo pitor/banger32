@@ -1,0 +1,29 @@
+{
+    "version": 4,
+    "configurations": [
+        {
+            "name": "Arduino",
+            "includePath": [
+                "/snap/arduino/current/hardware/arduino/avr/cores/arduino/",
+                "/snap/arduino/current/hardware/arduino/avr/libraries/EEPROM/",
+                "/snap/arduino/current/hardware/arduino/avr/libraries/SPI/",
+                "/snap/arduino/current/hardware/arduino/avr/libraries/SoftwareSerial/",
+                "/snap/arduino/current/hardware/arduino/avr/libraries/Wire/",
+                "/snap/arduino/current/hardware/tools/avr/avr/include/",
+                "/snap/arduino/current/hardware/tools/avr/avr/include/avr/",
+                "/snap/arduino/current/hardware/tools/avr/avr/include/compat/",
+                "/snap/arduino/current/hardware/tools/avr/avr/include/util/",
+                "/snap/arduino/current/hardware/tools/avr/lib/gcc/avr/7.3.0/include/",
+                "/snap/arduino/current/hardware/tools/avr/lib/gcc/avr/7.3.0/include-fixed/"
+            ],
+            "forcedInclude": [
+                "/snap/arduino/current/hardware/tools/avr/avr/include/math.h",
+                "/snap/arduino/current/hardware/tools/avr/avr/include/stdint.h"
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            }
+        }
+    ]
+}
