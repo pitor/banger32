@@ -2,24 +2,24 @@
 
 void Oscillator::init() {
   for(int i = 0; i < WAVE_BUFFER_SIZE; i++) {
-    waveBufferSquare[i] = i <= WAVE_BUFFER_SIZE / 2 ? -128 : 127;
+    owaveBufferSquare[i] = i <= WAVE_BUFFER_SIZE / 2 ? -128 : 127;
   }
 
   for(int i = 0; i < WAVE_BUFFER_SIZE; i++) {
-    waveBufferSine[i] = 127 * sin((2*PI*i)/WAVE_BUFFER_SIZE);
+    owaveBufferSine[i] = 127 * sin((2*PI*i)/WAVE_BUFFER_SIZE);
   }
 
   for(int i = 0; i < WAVE_BUFFER_SIZE; i++) {
-    waveBufferSaw[i] = 127 * (1.0 - (float)i * (2.0/WAVE_BUFFER_SIZE));
+    owaveBufferSaw[i] = 127 * (1.0 - (float)i * (2.0/WAVE_BUFFER_SIZE));
   }
 
   for(int i = 0; i < WAVE_BUFFER_SIZE; i++) {
     if(i <= WAVE_BUFFER_SIZE/2)
       // f1 = (-4/T)*t + 1
-      waveBufferTriangle[i] = 127 * ((float)i * (-4.0/WAVE_BUFFER_SIZE) + 1);
+      owaveBufferTriangle[i] = 127 * ((float)i * (-4.0/WAVE_BUFFER_SIZE) + 1);
     else
       // f2 = (4/T)*t - 3
-      waveBufferTriangle[i] = 127 * ((float)i * (4.0/WAVE_BUFFER_SIZE) - 3);
+      owaveBufferTriangle[i] = 127 * ((float)i * (4.0/WAVE_BUFFER_SIZE) - 3);
   }
   
 }
@@ -38,22 +38,22 @@ int8_t Oscillator::sampleValue(int millisInto) {
   
   if(waveForm == SQUARE) {
       sampleCounter++;
-      return waveBufferSquare[ix];
+      return owaveBufferSquare[ix];
   }
 
   if(waveForm == SAW) {
       sampleCounter++;
-      return waveBufferSaw[ix];
+      return owaveBufferSaw[ix];
   }
 
   if(waveForm == SINE) {
       sampleCounter++;
-      return waveBufferSine[ix];
+      return owaveBufferSine[ix];
   }
 
   if(waveForm == TRIANGLE) {
       sampleCounter++;
-      return waveBufferTriangle[ix];
+      return owaveBufferTriangle[ix];
   }
 
   return 0;
